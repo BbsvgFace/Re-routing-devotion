@@ -691,3 +691,4 @@ html:not(.js) .zig::after,.in .zig::after,h2.in .zig::after{clip-path:inset(0 0 
 .giga-block .giga img{border-radius:0}
 .giga-block .giga:hover{box-shadow:0 14px 36px -12px rgba(28,25,20,.28);transform:translateY(-2px)}
 .giga-block .giga:hover img{transform:none}
+.cpanel p b{font-family:var(--H);font-weight:500;color:var(--title);margin-right:2px}
