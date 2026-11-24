@@ -700,3 +700,4 @@ html:not(.js) .zig::after,.in .zig::after,h2.in .zig::after{clip-path:inset(0 0 
 .chain-txt{margin-top:18px;color:var(--body)}
 .chain-note{margin-top:14px;padding-left:16px;border-left:3px solid var(--title);font-family:var(--H);font-size:clamp(18px,1.8vw,21px);line-height:1.45;color:var(--ink);text-wrap:balance}
 @media (max-width:860px){.chain{flex-direction:column;align-items:flex-start;gap:14px}.chain::before{left:19px;right:auto;top:14px;bottom:14px;width:1px;height:auto}}
+.u-red{text-decoration:underline;text-decoration-color:var(--title);text-decoration-thickness:2px;text-underline-offset:5px;text-decoration-skip-ink:auto}
