@@ -713,3 +713,12 @@ html:not(.js) .zig::after,.in .zig::after,h2.in .zig::after{clip-path:inset(0 0 
 .map-intro-img:hover{transform:translateY(-6px) rotate(-1.2deg);box-shadow:0 30px 60px -26px rgba(28,25,20,.55)}
 .map-intro-img:hover img{transform:scale(1.05)}
 @media (prefers-reduced-motion:reduce){.map-intro-img,.map-intro-img img{transition:none}.map-intro-img:hover{transform:none}.map-intro-img:hover img{transform:none}}
+/* "thats us :D" scribble */
+.map-intro-media{position:relative}
+.us-note{position:absolute;left:-200px;bottom:4px;width:200px;height:130px;color:var(--title);pointer-events:none;z-index:2}
+.us-label{position:absolute;left:0;bottom:0;font-family:"Caveat","Comic Sans MS",cursive;font-size:30px;font-weight:600;line-height:1;transform:rotate(-6deg);transform-origin:left bottom;white-space:nowrap}
+.us-arrow{position:absolute;left:78px;bottom:34px;width:120px;height:90px;transform-origin:left bottom}
+.map-intro-media:hover .us-arrow{animation:usWiggle .9s ease-in-out}
+@keyframes usWiggle{0%,100%{transform:rotate(0)}30%{transform:rotate(-5deg)}60%{transform:rotate(3deg)}}
+@media (max-width:760px){.map-intro-media{margin-top:46px}.us-note{left:auto;right:0;bottom:auto;top:-62px;width:220px;height:62px}.us-label{left:auto;right:84px;bottom:14px;font-size:27px;transform:rotate(-4deg)}.us-arrow{left:auto;right:6px;bottom:-14px;width:76px;height:58px;transform:rotate(80deg);transform-origin:center}.map-intro-media:hover .us-arrow{animation:none}}
+@media (prefers-reduced-motion:reduce){.map-intro-media:hover .us-arrow{animation:none}}

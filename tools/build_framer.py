@@ -182,7 +182,7 @@ POST = r"""
     }
 """
 
-FONT_URL = "https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wdth,wght@6..144,25..151,1..1000&family=Noto+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+FONT_URL = "https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wdth,wght@6..144,25..151,1..1000&family=Noto+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@500;600&display=swap"
 
 tsx = f"""// @ts-nocheck
 // Re-Routing Devotion case study (IIT Kanpur, RSD15).
