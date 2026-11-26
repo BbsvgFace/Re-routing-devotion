@@ -10,7 +10,7 @@ from pathlib import Path
 
 SITE = Path("/home/claude/work/site")
 ASSETS = json.loads(Path("/home/claude/work/tools/framer_assets.json").read_text())
-URL = {k: "https://framerusercontent.com/images/" + v for k, v in ASSETS.items()}
+URL = {k: (v if v.startswith("https://") else "https://framerusercontent.com/images/" + v) for k, v in ASSETS.items()}
 
 def swap_assets(s):
     def rep(m):
@@ -18,7 +18,7 @@ def swap_assets(s):
         if key not in URL:
             raise SystemExit("missing asset " + key)
         return URL[key]
-    return re.sub(r"assets/((?:img|maps)/[\w.-]+\.(?:webp|svg|png))", rep, s)
+    return re.sub(r"assets/((?:img|maps|audio)/[\w.-]+\.(?:webp|svg|png|mp3))", rep, s)
 
 # ---------------- CSS ----------------
 css = (SITE / "styles.css").read_text()
