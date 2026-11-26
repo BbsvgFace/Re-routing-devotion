@@ -722,6 +722,9 @@ html:not(.js) .zig::after,.in .zig::after,h2.in .zig::after{clip-path:inset(0 0 
 @keyframes usWiggle{0%,100%{transform:rotate(0)}30%{transform:rotate(-5deg)}60%{transform:rotate(3deg)}}
 @media (max-width:760px){.map-intro-media{margin-top:46px}.us-note{left:auto;right:0;bottom:auto;top:-62px;width:220px;height:62px}.us-label{left:auto;right:84px;bottom:14px;font-size:27px;transform:rotate(-4deg)}.us-arrow{left:auto;right:6px;bottom:-14px;width:76px;height:58px;transform:rotate(80deg);transform-origin:center}.map-intro-media:hover .us-arrow{animation:none}}
 @media (prefers-reduced-motion:reduce){.map-intro-media:hover .us-arrow{animation:none}}
-/* smaller team photo */
-.map-intro{grid-template-columns:minmax(0,1fr) 290px;gap:56px}
-@media (max-width:760px){.map-intro{grid-template-columns:1fr;gap:22px}.map-intro-media{max-width:340px;margin-left:auto;margin-right:auto;width:100%}}
+/* smaller "thats us :D" scribble */
+.us-note{left:-160px;width:160px;height:104px}
+.us-label{font-size:22px}
+.us-arrow{left:62px;bottom:26px;width:96px;height:72px}
+@media (max-width:760px){.map-intro-media{margin-top:40px}.us-note{left:auto;right:0;top:-52px;width:190px;height:52px}.us-label{right:92px;bottom:12px;font-size:21px}.us-arrow{right:6px;bottom:-12px;width:62px;height:48px}}
+@media (max-width:760px){.us-label{right:82px}.us-arrow{right:12px;bottom:-30px;width:64px;height:48px;transform:scaleY(-1)}}
