@@ -637,6 +637,30 @@ function onScroll() {
 addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, {passive: true});
 onScroll();
 
+/* ------------------------------------------------------------------
+   TEAM PHOTO: hover plays the next of 8 short sounds (1 → 8, then loops)
+   Browsers only allow sound after the visitor has clicked or tapped the page once.
+------------------------------------------------------------------ */
+(() => {
+  const box = $('.map-intro-media'); if (!box) return;
+  const SRC = ['https://framerusercontent.com/assets/2m539GKNcWTTDLp0zJa0omKLGPQ.mp3', 'https://framerusercontent.com/assets/jhx3sZ7sqKUgXYQR2Cjls5qO7g.mp3', 'https://framerusercontent.com/assets/lsVGGoWApT02Sq4T9asNl0yWxWE.mp3', 'https://framerusercontent.com/assets/azFxK7JXLQ0kUJ5YWjCNcqcA0IM.mp3',
+               'https://framerusercontent.com/assets/OuTuVrBxtX1KoDiN3bRsP32r0.mp3', 'https://framerusercontent.com/assets/iJqo7trXUoqZ0WPApFPwQMjKxWQ.mp3', 'https://framerusercontent.com/assets/HFhlAJfXLlxLeobhkHIO24vYJo.mp3', 'https://framerusercontent.com/assets/YMW9jCseryyeyTHNZzb97gRhn4.mp3'];
+  let pool = null, i = 0;
+  const load = () => { if (!pool) pool = SRC.map(src => { const a = new Audio(src); a.preload = 'auto'; a.volume = 0.6; return a; }); };
+  const play = () => {
+    load();
+    const a = pool[i]; i = (i + 1) % pool.length;
+    try { a.currentTime = 0; const p = a.play(); if (p && p.catch) p.catch(() => {}); } catch (e) {}
+  };
+  box.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') play(); });
+  box.addEventListener('click', e => { if (e.pointerType !== 'mouse') play(); });
+  /* warm the files once the section is near, so the first hover isn't silent */
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => { if (es.some(x => x.isIntersecting)) { load(); io.disconnect(); } }, { rootMargin: '400px' });
+    io.observe(box);
+  }
+})();
+
     } catch (err) {
         console.error("[RerouteDevotion]", err)
     }
